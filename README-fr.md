@@ -1,6 +1,6 @@
-# Modket Boots Mania
+# Moquette Boots Mania
 
-**Modket Boots Mania** est un projet open-source dédié à la création d'une API de modding pour le jeu **Rocket Boot Mania**.
+**Moquette Boots Mania** est un projet open-source dédié à la création d'une API de modding pour le jeu **Rocket Boot Mania**.
 
 ---
 
