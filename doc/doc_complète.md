@@ -334,3 +334,86 @@ IL2CPP.il2cpp_runtime_invoke(NativeMethodInfoPtr_Start_Private_Void_0, ptrToInst
 
 ---
 
+## m_SpeedMeter
+
+
+## 📐 Propriété : `m_SpeedMeter`
+
+```csharp
+public unsafe RectTransform m_SpeedMeter
+```
+
+### 📦 Type : `RectTransform` (UnityEngine)
+
+### 🧭 Description
+
+Cette propriété permet d'accéder directement au champ `m_SpeedMeter` d'un objet Unity, mappé dans la mémoire IL2CPP, à l'aide d'opérations non sûres (`unsafe`) en C#. Elle encapsule un champ Unity de type `RectTransform` utilisé probablement pour afficher un indicateur visuel (ex: une jauge de vitesse).
+
+---
+
+### 🧠 Détail de l'implémentation
+
+#### ✅ Accès en lecture (`get`)
+
+```csharp
+get
+{
+	nint num = (nint)IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + 
+	           (int)IL2CPP.il2cpp_field_get_offset(NativeFieldInfoPtr_m_SpeedMeter);
+	System.IntPtr intPtr = *(System.IntPtr*)num;
+	return (intPtr != (System.IntPtr)0) ? new RectTransform(intPtr) : null;
+}
+```
+
+* `Il2CppObjectBaseToPtrNotNull(this)` : récupère le **pointeur mémoire natif de l'objet courant**.
+* `il2cpp_field_get_offset(...)` : récupère l'**offset** mémoire du champ `m_SpeedMeter`.
+* Additionne les deux pour obtenir **l’adresse réelle du champ en mémoire**.
+* Récupère le pointeur stocké à cette adresse.
+* Si le pointeur n'est pas nul, construit un nouvel objet `RectTransform` à partir de cette adresse. Sinon, retourne `null`.
+
+> ⚠️ Cela évite une reconstruction coûteuse côté Unity en accédant directement à la mémoire.
+
+#### 📝 Accès en écriture (`set`)
+
+```csharp
+set
+{
+	System.IntPtr num = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+	IL2CPP.FieldWriteWbarrierStub(
+		num,
+		(nint)num + (int)IL2CPP.il2cpp_field_get_offset(NativeFieldInfoPtr_m_SpeedMeter),
+		IL2CPP.Il2CppObjectBaseToPtr(value)
+	);
+}
+```
+
+* Calcule l'adresse mémoire où le champ est situé.
+* Convertit l’objet `RectTransform` `value` en pointeur IL2CPP.
+* Utilise `FieldWriteWbarrierStub` pour :
+
+  * **Écrire en mémoire de manière sécurisée pour le GC IL2CPP**.
+  * Appliquer une **barrière d’écriture** nécessaire pour maintenir la sécurité mémoire du runtime IL2CPP.
+
+---
+
+### ⚙️ Objectif
+
+Cette propriété est utilisée dans des contextes où :
+
+* On manipule des objets Unity `RectTransform` via IL2CPP.
+* On veut interagir avec un champ privé Unity sans passer par les bindings Unity classiques.
+* On veut des performances accrues ou injecter/modifier dynamiquement des valeurs pendant l’exécution.
+
+---
+
+### 📌 Remarques
+
+* Utiliser du code `unsafe` permet une performance brute, mais **augmente les risques de crash** si un pointeur invalide est manipulé.
+* Le champ `NativeFieldInfoPtr_m_SpeedMeter` doit avoir été initialisé auparavant dans un constructeur statique ou une méthode d’initialisation via :
+
+  ```csharp
+  NativeFieldInfoPtr_m_SpeedMeter = IL2CPP.GetIl2CppField(...);
+  ```
+
+---
+
